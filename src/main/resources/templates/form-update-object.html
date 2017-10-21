@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<title th:replace="fragments/fragment :: head"></title>
+</head>
+
+<body>
+
+	<h1 class="page-header">Edit Student</h1>
+
+	<form action="/student/update-project/submit" method="post" th:object="${student}">
+		<div>
+			<label for="npm">NPM</label> <input type="text" name="npm" readonly="true" th:value="${students.npm}" th:placeholder="${students.npm}"/>
+		</div>
+		
+		<div>
+			<label for="name">NAME</label> <input type="text" name="name" th:placeholder="${students.name}"/>
+		</div>
+		
+		<div>
+			<label for="gpa">GPA</label> <input type="text" name="gpa" th:value="${students.gpa}" th:placeholder="${students.gpa}"/>
+		</div>
+		<div>
+			<button type="submit" name="action" value="save">Update</button>
+		</div>
+	</form>
+
+</body>
+</html>
+

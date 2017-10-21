@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:replace="fragments/fragment :: head"></title>
+    </head>
+    <body>
+    	<form th:object="${student}">
+       	<h3 th:text="'NPM = ' + ${student.npm}" th:field="*{npm}">Student NPM</h3>
+       	<h3 th:text="'Name = ' + ${student.name}" th:field="*{name}">Student Name</h3>
+       	<h3 th:text="'GPA = ' + ${student.gpa}" th:field="*{gpa}">Student GPA</h3>
+       
+       	<h3>Kuliah yang diambil</h3>
+       	<ul th:each="course,iterationStatus: ${student.courses}">
+			<li th:text="${course.name} + '-' + ${course.credits} + ' sks'">       
+ 				Nama kuliah-X SKS
+ 			</li>
+ 		</ul> 
+       	</form>
+    </body>
+</html>
+

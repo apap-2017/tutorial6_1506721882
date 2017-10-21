@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+	<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title th:fragment="head" th:if="${#httpServletRequest.requestURI == '/'}">Index</title>
+		<title th:fragment="head" th:if="${#httpServletRequest.requestURI == '/course/view/${id_course}'}">View Course</title>
+		<title th:fragment="head" th:if="${#httpServletRequest.requestURI == '/delete'}">Delete</title>
+		<title th:fragment="head" th:if="${#httpServletRequest.requestURI == '/student/delete/${npm}'}">Delete Student</title>
+		<title th:fragment="head" th:if="${#httpServletRequest.requestURI == '/student/add'}">Add Student</title>
+		<title th:fragment="head" th:if="${#httpServletRequest.requestURI == '/student/add/submit'}">Add</title>
+		<title th:fragment="head" th:if="${#httpServletRequest.requestURI == '/student/view'}">View Student by NPM</title>
+		<title th:fragment="head" th:if="${#httpServletRequest.requestURI == '/student/view/${npm}'}">View Student by NPM</title>
+		<title th:fragment="head" th:if="${#httpServletRequest.requestURI == '/student/viewall'}">View All Students</title>
+		<title th:fragment="head" th:if="${#httpServletRequest.requestURI == '/student/update/${npm}'}">Update Student</title>
+		<title th:fragment="head" th:if="${#httpServletRequest.requestURI == '/student/update/submit'}">Update</title>
+	</head>
+	<body>
+		<div th:fragment="header">
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/student/viewall">Daftar Mahasiswa</a></li>
+				<li><a href="/student/add">Menambah Mahasiswa</a></li>
+			</ul>
+		</div>
+		<div th:fragment="footer">
+		<hr/>
+			<h4>Mata Kuliah APAP</h4>
+		</div>
+	</body>
+</html>
